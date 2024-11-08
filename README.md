@@ -48,3 +48,5 @@ pip install pystray pillow
 * Przypomnienia: Implementacja funkcji przypomnień dla użytkowników, aby nie zapomnieli o zadaniach.
 * dostosowanie Wyglądu: Umożliwienie użytkownikom zmiany kolorów i stylów aplikacji dla lepszego dopasowania do ich preferencji.
 * Obsługa wielojęzyczna: Dodanie wsparcia dla wielu języków, aby aplikacja była dostępna dla szerszego kręgu użytkowników.
+
+* Dodać opcje w ustawieniach samopoczucie dzisiaj i trudność zadań umysłowych
