@@ -30,10 +30,9 @@ def setup_tray(app_instances, quit_callback):
     # Tworzenie menu dla tray'a
     menu = Menu(
         item('\u2705 Checklist', lambda: show_window(app_instances, 'checklist')),
-        item('\U0001F4DD Notebook', lambda: show_window(app_instances, 'notebook')),
-        item('\U0001F4CA Raports', lambda: show_window(app_instances, 'reports')),
         item('\U0001F511 Passwords', lambda: show_window(app_instances, 'passwords')),
         item('\U0001F504 File converter', lambda: show_window(app_instances, 'passwords')),
+        item('\U0001F504 File converter', lambda: show_window(app_instances, 'Ciper')),
         item('\U0001F6AA Quit', quit_callback)
     )
     
