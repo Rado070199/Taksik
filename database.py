@@ -1,9 +1,10 @@
+# database.py
+
 from peewee import *
 import datetime
 
 # Tworzymy połączenie z SQLite
 db = SqliteDatabase('taksik.db')
-
 
 class Task(Model):
     status = BooleanField()
@@ -16,33 +17,13 @@ class Task(Model):
     class Meta:
         database = db  # Określamy bazę danych
 
-# Tworzymy tabelę, jeśli jeszcze nie istnieje
+# Tworzymy tabelę
 db.connect()
-db.create_tables([Task], safe=True)  # safe=True zapobiegnie błędom, jeśli tabela już istnieje
+db.create_tables([Task], safe=True)
 
-# Dodajemy dane do bazy
-Task.create(
-    status=False,
-    title="Dodać commit Taksik",
-    description="Utworzenie aplikacji",
-    priority="Medium",
-    startDate=datetime.datetime.now(),
-    endDate=datetime.datetime.now(),
-)
-
-Task.create(
-    status=False,
-    title="Dodać commit Taksik2",
-    description="Utworzenie aplikacji2",
-    priority="Low",
-    startDate=datetime.datetime.now(),
-    endDate=datetime.datetime.now(),
-)
-
-# Pobieranie wszystkich danych
-tasks = Task.select()  # select() zwraca wszystkie rekordy
-for task in tasks:
-    print(f"Task: {task.title}, Priority: {task.priority}, Status: {task.status}")
+# Funkcja do pobierania wszystkich zadań
+def get_all_tasks():
+    return list(Task.select())
 
 # Zamykamy połączenie
 db.close()
